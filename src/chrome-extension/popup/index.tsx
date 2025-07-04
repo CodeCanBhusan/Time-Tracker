@@ -5,7 +5,7 @@ import { useExtensionStorage } from "../hooks/useExtensionStorage";
 import useCustomQuery from "../hooks/useCustomQuery";
 import axios from "axios";
 
-const baseUrl = "http://localhost:5000/api";
+const baseUrl = "https://time-tracker-be-rei6.onrender.com/api";
 
 const toDatetimeLocal = (date: Date | string) => {
   const d = new Date(date);
