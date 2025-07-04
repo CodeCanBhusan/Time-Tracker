@@ -189,7 +189,7 @@ export const Popup = () => {
   }, [project, projectOptions, setItem]);
 
   return (
-    <div className="bg-white p-5 font-sans">
+    <div className="bg-white  font-sans">
       <div className="max-w-lg mx-auto bg-white p-5 rounded-lg shadow-lg border border-gray-200">
         {/* Loader */}
         {isLoading && (
