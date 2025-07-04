@@ -14,5 +14,14 @@
     "48": "public/48.png",
     "192": "public/192.png"
   },
-  "permissions": ["storage"]
+  "permissions": [
+    "storage",
+    "alarms",
+    "scripting",
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking",
+    "https://time-tracker-be-rei6.onrender.com/"
+  ],
+  "host_permissions": ["https://time-tracker-be-rei6.onrender.com/*"]
 }
