@@ -53,6 +53,7 @@ export const Popup = () => {
   const [endTime, setEndTime] = useState("");
   const [started, setStarted] = useState(false);
   const [timeSheet, setTimeSheet] = useState<TurnResponse | null>(null);
+  const [count, setCount] = useState(0);
 
   const { data: projectsList = [], isLoading: projectLoading } = useCustomQuery(
     `${baseUrl}/projects`
@@ -87,6 +88,11 @@ export const Popup = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserToken(e.target.value);
     setItem("username", e.target.value || "");
+    setName("");
+
+    setTimeout(() => {
+      setCount((prev) => prev + 1);
+    }, 200);
   };
 
   const projectOptions = React.useMemo(() => {
@@ -172,7 +178,7 @@ export const Popup = () => {
 
     const url = `${baseUrl}/time-sheets/turn/${userToken}/${project._id}`;
     refetch(url);
-  }, [project, refetch, userToken]);
+  }, [project, refetch, userToken, count]);
 
   return (
     <div className="bg-white p-5 font-sans">
