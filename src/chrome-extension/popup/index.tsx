@@ -7,6 +7,8 @@ import axios from "axios";
 
 const baseUrl = "https://time-tracker-be-rei6.onrender.com/api";
 
+// const baseUrl = "http://localhost:5000/api";
+
 const toDatetimeLocal = (date: Date | string) => {
   const d = new Date(date);
   d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
@@ -95,7 +97,7 @@ export const Popup = () => {
 
   const handleToggleTimer = async () => {
     if (!userToken.trim()) {
-      alert("Please enter your name.");
+      alert("Please enter your user token.");
       return;
     }
 
