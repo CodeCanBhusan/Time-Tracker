@@ -115,7 +115,7 @@ export const Popup = () => {
     const message = {
       userToken: userToken?.trim(),
       project: project?._id,
-      remark,
+      remarks: remark,
       startTime: startTime ? new Date(startTime).toISOString() : null,
       endTime: endTime ? new Date(endTime).toISOString() : null,
     };
