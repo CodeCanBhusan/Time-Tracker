@@ -167,7 +167,7 @@ export const Popup = () => {
   }, [getItem]);
 
   React.useEffect(() => {
-    if (!userToken || userToken.trim().length !== 24) return;
+    if (!userToken || userToken.trim().length < 20) return;
     if (!project?._id) return;
 
     const url = `${baseUrl}/time-sheets/turn/${userToken}/${project._id}`;
@@ -206,7 +206,6 @@ export const Popup = () => {
               type="button"
               onClick={() => {
                 setShowPassword(!showPassword);
-                setName("");
               }}
               className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 focus:outline-none"
             >
@@ -249,6 +248,7 @@ export const Popup = () => {
             onClick={() => {
               setUserToken("");
               setItem("username", "");
+              setName("");
             }}
             className="bg-red-500 text-white px-3 py-2 rounded font-bold hover:bg-red-600 transition-colors "
           >
