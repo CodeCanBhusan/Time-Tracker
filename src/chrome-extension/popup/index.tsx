@@ -180,6 +180,14 @@ export const Popup = () => {
     refetch(url);
   }, [project, refetch, userToken, count]);
 
+  React.useEffect(() => {
+    if (project) return;
+    if (projectOptions.length === 0) return;
+    const _topProject = projectOptions[0];
+    setProject(_topProject);
+    setItem("project", JSON.stringify(_topProject));
+  }, [project, projectOptions, setItem]);
+
   return (
     <div className="bg-white p-5 font-sans">
       <div className="max-w-lg mx-auto bg-white p-5 rounded-lg shadow-lg border border-gray-200">
